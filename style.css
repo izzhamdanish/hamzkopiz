@@ -1,0 +1,52 @@
+/* Tailwind custom color configuration mapping */
+:root {
+--color-brand-50: #fdf8f6;
+--color-brand-100: #f2e8e5;
+--color-brand-200: #e4d4cf;
+--color-brand-300: #d0b4ab;
+--color-brand-400: #b88c7d;
+--color-brand-500: #a26b5b;
+--color-brand-600: #8c5344;
+--color-brand-700: #734035;
+--color-brand-800: #5f362d;
+--color-brand-900: #4e2f28;
+--color-brand-dark: #1c1615;
+--color-brand-gold: #d4af37;
+}
+
+/* Glassmorphism Navigation */
+.glass-nav {
+background: rgba(28, 22, 21, 0.85);
+backdrop-filter: blur(12px);
+}
+
+/* Hero Section Gradient Background */
+.hero-gradient {
+background: linear-gradient(135deg, rgba(28, 22, 21, 0.95) 0%, rgba(78, 47, 40, 0.8) 100%),
+url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1920&q=80');
+background-size: cover;
+background-position: center;
+}
+
+/* Coffee Card Image Zoom Animation */
+.coffee-card:hover .coffee-img {
+transform: scale(1.08);
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+width: 8px;
+}
+
+::-webkit-scrollbar-track {
+background: #1c1615;
+}
+
+::-webkit-scrollbar-thumb {
+background: #734035;
+border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #a26b5b;
+}

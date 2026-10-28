@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kedai Kopi Infraksi | Kelainan Dalam Setiap Titisan</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-brand-dark text-stone-200 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-stone-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-brand-500 text-stone-900 flex items-center justify-center font-bold text-xl group-hover:rotate-12 transition-transform duration-300">
+                        <i class="fa-solid font-bold text-stone-950 fa-mug-hot"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-xl sm:text-2xl tracking-wider text-white block">INFRAKSI</span>
+                        <span class="text-[10px] tracking-widest text-brand-400 uppercase font-semibold -mt-1 block">Kedai Kopi Artisanal</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#home" class="hover:text-brand-400 transition-colors">Utama</a>
+                    <a href="#tentang" class="hover:text-brand-400 transition-colors">Kisah Kami</a>
+                    <a href="#menu" class="hover:text-brand-400 transition-colors">Menu Kopi</a>
+                    <a href="#custom-brew" class="hover:text-brand-400 transition-colors">Racik Kopi Anda</a>
+                    <a href="#lokasi" class="hover:text-brand-400 transition-colors">Lokasi</a>
+                </nav>
+
+                <!-- Action Buttons & Cart Trigger -->
+                <div class="flex items-center space-x-4">
+                    <button id="cart-toggle-btn" class="relative p-2.5 text-stone-300 hover:text-white bg-stone-900 border border-stone-800 rounded-full transition-colors">
+                        <i class="fa-solid fa-basket-shopping text-lg"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-brand-500 text-stone-950 font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                    <a href="#menu" class="hidden sm:inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-brand-500 text-stone-950 hover:bg-brand-400 transition-all transform hover:-translate-y-0.5">
+                        Pesan Sekarang
+                    </a>
+                    <!-- Mobile Hamburger Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 text-stone-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-stone-800 bg-brand-dark px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-link block py-2 text-base font-medium text-stone-200 hover:text-brand-400">Utama</a>
+            <a href="#tentang" class="mobile-link block py-2 text-base font-medium text-stone-200 hover:text-brand-400">Kisah Kami</a>
+            <a href="#menu" class="mobile-link block py-2 text-base font-medium text-stone-200 hover:text-brand-400">Menu Kopi</a>
+            <a href="#custom-brew" class="mobile-link block py-2 text-base font-medium text-stone-200 hover:text-brand-400">Racik Kopi Anda</a>
+            <a href="#lokasi" class="mobile-link block py-2 text-base font-medium text-stone-200 hover:text-brand-400">Lokasi</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-24 hero-gradient overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-500/40 bg-brand-500/10 text-brand-300 text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-fire text-brand-400"></i> Biji Kopi Sangrai Segar Setiap Hari
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
+                        Cicipi Kelainan <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 via-brand-400 to-brand-500">Kopi Infraksi</span>
+                    </h1>
+                    <p class="text-stone-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Kami memecahkan kebiasaan bancuhan kopi harian dengan gabungan bumbu tempatan dan teknik seduhan artisanal terpilih. Kualiti tanpa kompromi.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#menu" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-brand-500 text-stone-950 font-bold hover:bg-brand-400 transition-all shadow-lg shadow-brand-500/20 text-center">
+                            Lihat Menu Penuh
+                        </a>
+                        <a href="#custom-brew" class="w-full sm:w-auto px-8 py-3.5 rounded-full border border-stone-700 bg-stone-900/60 text-white font-semibold hover:border-brand-400 hover:bg-stone-800 transition-all text-center">
+                            <i class="fa-solid fa-wand-magic-sparkles text-brand-400 mr-2"></i>Cipta Kopi Sendiri
+                        </a>
+                    </div>
+
+                    <!-- Statistics / Badges -->
+                    <div class="grid grid-cols-3 gap-4 pt-10 border-t border-stone-800/80 max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <span class="block text-2xl font-bold text-white font-serif">100%</span>
+                            <span class="text-xs text-stone-400">Arabica Speshalti</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-bold text-white font-serif">15+</span>
+                            <span class="text-xs text-stone-400">Resipi Eksklusif</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-bold text-white font-serif">4.9★</span>
+                            <span class="text-xs text-stone-400">Penilaian Pelanggan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Hero Visual Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-brand-500 to-amber-700 opacity-30 blur-xl"></div>
+                        <div class="relative rounded-3xl bg-stone-900/90 border border-stone-800 p-6 overflow-hidden shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80" alt="Infraksi Signature Coffee" class="w-full h-80 object-cover rounded-2xl mb-5">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <span class="text-xs font-semibold text-brand-400 tracking-wider uppercase">Menu Utama Hari Ini</span>
+                                    <h3 class="text-xl font-bold text-white font-serif mt-0.5">Infraksi Smoked Gula Melaka</h3>
+                                </div>
+                                <span class="text-lg font-bold text-brand-300">RM 15.00</span>
+                            </div>
+                            <p class="text-xs text-stone-400 mt-2">Espresso berganda dipadu gula melaka salai khas dan susu segar berkrim.</p>
+                            <button onclick="addToCart('Infraksi Smoked Gula Melaka', 15.00, 'Espresso, Gula Melaka Salai, Susu Segar')" class="w-full mt-4 py-2.5 rounded-xl bg-stone-800 hover:bg-brand-500 hover:text-stone-950 text-white text-sm font-semibold transition-colors flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-plus text-xs"></i> Tambah Ke Pesanan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kisah Kami Section -->
+    <section id="tentang" class="py-24 bg-stone-950 border-y border-stone-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=600&q=80" alt="Barista Menyediakan Kopi" class="rounded-2xl w-full h-64 object-cover">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Biji Kopi Infraksi" class="rounded-2xl w-full h-64 object-cover mt-8">
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-900/50 border border-brand-700/50 text-brand-300 text-xs font-semibold uppercase">
+                        Kisah & Falsafah
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
+                        Mengapa Kami Menamakan Ini <span class="text-brand-400 italic">Infraksi</span>?
+                    </h2>
+                    <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+                        Perkataan "Infraksi" bermaksud pembiasan atau penyimpangan daripada norma biasa. Di Kedai Kopi Infraksi, kami percaya bahawa kopi terbaik lahir apabila kita berani mencabar resipi biasa.
+                    </p>
+                    <p class="text-stone-400 text-sm leading-relaxed">
+                        Kami memilih biji kopi gred tinggi dari pergunungan nusantara dan menyangrainya (roasting) dengan teliti demi memelihara profil rasa yang asli, unik, dan kaya dengan aroma.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-stone-900 border border-stone-800">
+                            <i class="fa-solid fa-seedling text-brand-400 text-xl mb-2"></i>
+                            <h4 class="text-white font-semibold text-sm">Sumber Etik</h4>
+                            <p class="text-xs text-stone-400">Biji kopi dibeli terus dari petani tempatan.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-stone-900 border border-stone-800">
+                            <i class="fa-solid fa-fire-burner text-brand-400 text-xl mb-2"></i>
+                            <h4 class="text-white font-semibold text-sm">Sangrai Artisan</h4>
+                            <p class="text-xs text-stone-400">Profil rasa dikawal secara presisi harian.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Kopi Section -->
+    <section id="menu" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-semibold uppercase text-brand-400 tracking-widest">Pilihan Istimewa</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">Menu Kopi Infraksi</h2>
+                <p class="text-stone-400 mt-3 text-sm">Setiap cawan disajikan dengan dedikasi untuk memanjakan deria anda.</p>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12" id="filter-buttons">
+                <button onclick="filterMenu('all', event)" class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold bg-brand-500 text-stone-950 transition-all">Semua</button>
+                <button onclick="filterMenu('signature', event)" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-stone-900 border border-stone-800 text-stone-300 hover:border-brand-500 transition-all">Signature Infraksi</button>
+                <button onclick="filterMenu('espresso', event)" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-stone-900 border border-stone-800 text-stone-300 hover:border-brand-500 transition-all">Espresso Klasik</button>
+                <button onclick="filterMenu('manual', event)" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-stone-900 border border-stone-800 text-stone-300 hover:border-brand-500 transition-all">Manual Brew</button>
+                <button onclick="filterMenu('non-coffee', event)" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-stone-900 border border-stone-800 text-stone-300 hover:border-brand-500 transition-all">Bukan Kopi & Pastri</button>
+            </div>
+
+            <!-- Menu Grid Container -->
+            <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Javascript will render menu items dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Custom Brew Simulator -->
+    <section id="custom-brew" class="py-24 bg-stone-950 border-t border-stone-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="inline-block px-3 py-1 rounded-full bg-brand-500/20 text-brand-400 text-xs font-semibold uppercase tracking-wider">
+                        Eksperimen Interaktif
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">
+                        Infraksi Brew Builder
+                    </h2>
+                    <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+                        Cipta bancuhan kopi peribadi anda sendiri! Pilih asas espresso, jenis susu, rasa khas, dan bahan sampingan. Barista kami akan menyediakannya mengikut spesifikasi tepat anda.
+                    </p>
+
+                    <!-- Form Builder Options -->
+                    <div class="space-y-4 pt-4">
+                        <!-- Step 1: Base -->
+                        <div>
+                            <label class="block text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">1. Pilih Asas Kopi (Base)</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <button type="button" onclick="selectOption('base', 'Single Shot Espresso', 6.00, event)" class="option-btn base-btn active p-3 rounded-xl border border-brand-500 bg-brand-500/10 text-white text-xs font-medium text-center hover:border-brand-400">
+                                    Single Shot (RM6.00)
+                                </button>
+                                <button type="button" onclick="selectOption('base', 'Double Shot Espresso', 8.00, event)" class="option-btn base-btn p-3 rounded-xl border border-stone-800 bg-stone-900 text-stone-300 text-xs font-medium text-center hover:border-brand-400">
+                                    Double Shot (RM8.00)
+                                </button>
+                                <button type="button" onclick="selectOption('base', 'Cold Brew Base', 9.00, event)" class="option-btn base-btn p-3 rounded-xl border border-stone-800 bg-stone-900 text-stone-300 text-xs font-medium text-center hover:border-brand-400">
+                                    Cold Brew (RM9.00)
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Milk -->
+                        <div>
+                            <label class="block text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">2. Pilih Jenis Susu</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <button type="button" onclick="selectOption('milk', 'Susu Segar (Fresh Milk)', 2.00, event)" class="option-btn milk-btn active p-3 rounded-xl border border-brand-500 bg-brand-500/10 text-white text-xs font-medium text-center hover:border-brand-400">
+                                    Susu Segar (+RM2)
+                                </button>
+                                <button type="button" onclick="selectOption('milk', 'Susu Oat (Oat Milk)', 4.00, event)" class="option-btn milk-btn p-3 rounded-xl border border-stone-800 bg-stone-900 text-stone-300 text-xs font-medium text-center hover:border-brand-400">
+                                    Susu Oat (+RM4)
+                                </button>
+                                <button type="button" onclick="selectOption('milk', 'Tanpa Susu (Black)', 0.00, event)" class="option-btn milk-btn p-3 rounded-xl border border-stone-800 bg-stone-900 text-stone-300 text-xs font-medium text-center hover:border-brand-400">
+                                    Tanpa Susu (+RM0)
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Flavor -->
+                        <div>
+                            <label class="block text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">3. Tambah Perisa Khas</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <button type="button" onclick="selectOption('flavor', 'Gula Melaka Salai', 2.50, event)" class="option-btn flavor-btn active p-3 rounded-xl border border-brand-500 bg-brand-500/10 text-white text-xs font-medium text-center hover:border-brand-400">
+                                    Gula Melaka (+RM2.50)
+                                </button>
+                                <button type="button" onclick="selectOption('flavor', 'Vanilla Pod', 2.00, event)" class="option-btn flavor-btn p-3 rounded-xl border border-stone-800 bg-stone-900 text-stone-300 text-xs font-medium text-center hover:border-brand-400">
+                                    Vanilla (+RM2.00)
+                                </button>
+                                <button type="button" onclick="selectOption('flavor', 'Salted Caramel', 2.50, event)" class="option-btn flavor-btn p-3 rounded-xl border border-stone-800 bg-stone-900 text-stone-300 text-xs font-medium text-center hover:border-brand-400">
+                                    Caramel (+RM2.50)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Preview Card & Order Button -->
+                <div class="lg:col-span-6">
+                    <div class="p-8 rounded-3xl bg-stone-900 border border-stone-800 relative overflow-hidden shadow-2xl">
+                        <div class="flex items-center justify-between pb-6 border-b border-stone-800">
+                            <div>
+                                <h3 class="font-serif text-2xl font-bold text-white">Ringkasan Resipi Ciptaan</h3>
+                                <p class="text-xs text-stone-400">Eksperimen Kopi Khas Anda</p>
+                            </div>
+                            <span class="p-3 bg-brand-500/10 rounded-2xl text-brand-400">
+                                <i class="fa-solid fa-flask text-2xl"></i>
+                            </span>
+                        </div>
+
+                        <div class="py-6 space-y-4 text-sm">
+                            <div class="flex justify-between items-center">
+                                <span class="text-stone-400">Asas:</span>
+                                <span id="summary-base" class="font-semibold text-white">Single Shot Espresso</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-stone-400">Susu:</span>
+                                <span id="summary-milk" class="font-semibold text-white">Susu Segar (Fresh Milk)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-stone-400">Perisa:</span>
+                                <span id="summary-flavor" class="font-semibold text-white">Gula Melaka Salai</span>
+                            </div>
+                            <div class="pt-4 border-t border-stone-800 flex justify-between items-center">
+                                <span class="text-base font-bold text-white">Jumlah Harga:</span>
+                                <span id="summary-total" class="text-2xl font-bold text-brand-400 font-serif">RM 10.50</span>
+                            </div>
+                        </div>
+
+                        <button onclick="addCustomBrewToCart()" class="w-full py-4 rounded-xl bg-brand-500 hover:bg-brand-400 text-stone-950 font-bold transition-colors shadow-lg shadow-brand-500/20 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-cart-plus"></i> Tambah Kopi Ciptaan Ke Pesanan
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <h2 class="font-serif text-3xl font-bold text-white">Apa Kata Penggemar Kopi Kami</h2>
+                <p class="text-stone-400 text-sm mt-2">Ulasan jujur daripada pelanggan setia Kedai Kopi Infraksi.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-stone-900 border border-stone-800 space-y-4">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-stone-300 text-sm italic">"Rasa Smoked Gula Melaka mereka memang tak boleh jumpa kat tempat lain. Kopi pekat dan harum!"</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-9 h-9 rounded-full bg-brand-700 flex items-center justify-center font-bold text-white text-xs">AH</div>
+                        <div>
+                            <h4 class="text-white text-xs font-semibold">Amirul Hakim</h4>
+                            <span class="text-[10px] text-stone-400">Pelanggan Tetap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-stone-900 border border-stone-800 space-y-4">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-stone-300 text-sm italic">"Suasana kedai sangat tenang untuk buat kerja. Oat Milk Latte mereka sangat berkrim dan pas manisnya."</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-9 h-9 rounded-full bg-brand-700 flex items-center justify-center font-bold text-white text-xs">SL</div>
+                        <div>
+                            <h4 class="text-white text-xs font-semibold">Siti NurLiyana</h4>
+                            <span class="text-[10px] text-stone-400">Pereka Grafik</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-stone-900 border border-stone-800 space-y-4">
+                    <div class="flex text-amber-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-stone-300 text-sm italic">"Manual brew guna biji kopi Sumatra memang padu! Barista sangat ramah dan tahu menerangkan nota rasa."</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-9 h-9 rounded-full bg-brand-700 flex items-center justify-center font-bold text-white text-xs">KH</div>
+                        <div>
+                            <h4 class="text-white text-xs font-semibold">Khairul Anwar</h4>
+                            <span class="text-[10px] text-stone-400">Penggemar V60</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="lokasi" class="py-24 bg-stone-950 border-t border-stone-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Info & Hours -->
+                <div class="space-y-6">
+                    <span class="text-xs font-semibold uppercase text-brand-400 tracking-widest">Kunjungi Kami</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Lokasi & Waktu Operasi</h2>
+                    <p class="text-stone-400 text-sm">Singgah ke kafe kami untuk menikmati cawan kopi hangat bersama suasana yang menenangkan.</p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-stone-900 rounded-xl text-brand-400 border border-stone-800">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Alamat Kafe</h4>
+                                <p class="text-stone-400 text-xs mt-0.5">No. 42, Jalan Presint Kopi 3/1, Bangi, Selangor</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-stone-900 rounded-xl text-brand-400 border border-stone-800">
+                                <i class="fa-solid fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Waktu Operasi</h4>
+                                <p class="text-stone-400 text-xs mt-0.5">Isnin - Jumaat: 8:00 AM - 10:00 PM</p>
+                                <p class="text-stone-400 text-xs">Sabtu - Ahad: 9:00 AM - 11:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-stone-900 rounded-xl text-brand-400 border border-stone-800">
+                                <i class="fa-solid fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Hubungi / WhatsApp</h4>
+                                <p class="text-stone-400 text-xs mt-0.5">+60 12-345 6789</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Mock Map / Visual Image -->
+                <div class="rounded-3xl overflow-hidden border border-stone-800 relative bg-stone-900 min-h-[300px] flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1000&q=80" alt="Suasana Kafe Infraksi" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-stone-950/40 backdrop-blur-[2px] flex items-center justify-center">
+                        <div class="text-center p-6 bg-stone-900/90 rounded-2xl border border-stone-800 max-w-xs shadow-2xl">
+                            <i class="fa-solid fa-mug-hot text-brand-400 text-3xl mb-2"></i>
+                            <h3 class="text-white font-serif font-bold text-lg">Ruang Selesa</h3>
+                            <p class="text-xs text-stone-400 mt-1">Dilengkapi Wi-Fi percuma & palam kuasa untuk keselesaan anda.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 border-t border-stone-900 py-12 text-stone-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-brand-500 text-stone-950 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-mug-hot text-xs"></i>
+                    </div>
+                    <span class="font-serif font-bold text-white text-lg tracking-wider">INFRAKSI</span>
+                </div>
+                <p class="text-xs text-stone-500">© 2026 Kedai Kopi Infraksi. Hak Cipta Terelihara.</p>
+                <div class="flex space-x-4 text-stone-400">
+                    <a href="#" class="hover:text-brand-400 transition-colors"><i class="fa-brands fa-instagram text-lg"></i></a>
+                    <a href="#" class="hover:text-brand-400 transition-colors"><i class="fa-brands fa-facebook text-lg"></i></a>
+                    <a href="#" class="hover:text-brand-400 transition-colors"><i class="fa-brands fa-tiktok text-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-over Shopping Cart Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+        <div class="absolute inset-0 bg-stone-950/80 backdrop-blur-sm transition-opacity" id="cart-backdrop"></div>
+        <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+            <div class="pointer-events-auto w-screen max-w-md bg-stone-900 border-l border-stone-800 shadow-2xl flex flex-col">
+                <!-- Cart Header -->
+                <div class="p-6 border-b border-stone-800 flex items-center justify-between">
+                    <h2 class="text-lg font-bold text-white font-serif flex items-center gap-2">
+                        <i class="fa-solid fa-basket-shopping text-brand-400"></i> Pesanan Anda
+                    </h2>
+                    <button id="cart-close-btn" class="text-stone-400 hover:text-white p-2">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Cart Items List -->
+                <div class="flex-1 overflow-y-auto p-6 space-y-4" id="cart-items-container">
+                    <!-- Dynamic Cart Items Rendered Here -->
+                </div>
+
+                <!-- Cart Footer & Checkout -->
+                <div class="p-6 border-t border-stone-800 space-y-4 bg-stone-950">
+                    <div class="flex justify-between text-base font-bold text-white">
+                        <span>Jumlah Keseluruhan:</span>
+                        <span id="cart-total-price" class="text-brand-400 font-serif text-xl">RM 0.00</span>
+                    </div>
+                    <button onclick="checkout()" class="w-full py-3.5 rounded-xl bg-brand-500 hover:bg-brand-400 text-stone-950 font-bold transition-colors shadow-lg shadow-brand-500/20">
+                        Hantar Pesanan (WhatsApp)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-brand-500 text-stone-950 font-semibold px-5 py-3 rounded-xl shadow-2xl transition-all duration-300 transform translate-y-20 opacity-0 flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-lg"></i>
+        <span id="toast-message">Item ditambah ke pesanan!</span>
+    </div>
+
+    <!-- JavaScript Application Logic File -->
+    <script src="script.js"></script>
+</body>
+</html>
